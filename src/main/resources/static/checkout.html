@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buy cool new product</title>
+<!--    <link rel="stylesheet" href="style.css">-->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script async
+            src="https://js.stripe.com/v3/buy-button.js">
+    </script>
+</head>
+<body>
+<section>
+    <div class="product">
+        <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+        <div class="description">
+            <h3>Stubborn Attachments</h3>
+            <h5>$20.00</h5>
+        </div>
+    </div>
+    <form action="/create-checkout-session" method="POST">
+        <button type="submit" id="checkout-button">Checkout</button>
+    </form>
+
+    <stripe-buy-button
+            buy-button-id="buy_btn_1PK5SYDmTzP0jvvkxn8YSp9m"
+            publishable-key="pk_test_51NakfLDmTzP0jvvkfI2NE5JAqCcuZwDaj8qaR8iQp3tDQWqzOKdQOqOqOs9RcIGOA3KqQvtf0EoxOydqT7Yv30YY00uKsBwr51"
+    >
+        BUY
+    </stripe-buy-button>
+</section>
+</body>
+</html>
