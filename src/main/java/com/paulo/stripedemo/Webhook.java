@@ -23,6 +23,7 @@ public class Webhook {
         log.info("Webhook event: {}", event);
 
         if ("checkout.session.completed".equals(event.getType()) || "checkout.session.async_payment_succeeded".equals(event.getType())) {
+            log.info("this event is a checkout session");
             Optional<StripeObject> stripeObject = event.getDataObjectDeserializer().getObject();
 
             if (stripeObject.isPresent()) {
