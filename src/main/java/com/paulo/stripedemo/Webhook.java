@@ -15,7 +15,7 @@ public class Webhook {
 
     @PostMapping("/test")
     public ResponseEntity charge(@RequestBody Event event) {
-        log.info("Webhook event: {}", event);
+        log.info("Webhook event: {}\nObject: {}", event, event.getObject());
         return ResponseEntity.ok().build();
     }
 }
